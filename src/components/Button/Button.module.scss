@@ -12,7 +12,7 @@
   & svg{
       fill: $c !important;
     }
-  &:disabled{
+  &.disabled{
     background: var(--button-primary-bg-disabled);
     $c:var(--button-primary-text-disabled);
     color: $c;
@@ -20,7 +20,7 @@
       fill: $c!important;
     }
   }
-  &:not(:disabled):not(.loading):hover{
+  &:not(.disabled):not(.loading):hover{
     background: var(--button-primary-bg-hover);
     $c:var(--button-primary-text-hover);
     color: $c;
