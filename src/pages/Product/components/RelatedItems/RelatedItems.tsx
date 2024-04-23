@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import * as PostService from 'api/ProductService'
 import {Product} from 'api/ProductService'
 import Button from 'components/Button'
-import Card from 'components/Card/Card'
+import Card from 'components/Card'
 import {ProductModelToCardProps} from '../../../common.ts'
 import styles from './RelatedItems.module.scss'
 

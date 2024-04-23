@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom'
-import PagePadding from 'components/PagePadding/PagePadding'
+import PagePadding from 'components/PagePadding'
 import logo from './img/logo.svg'
 import styles from './Header.module.scss'
 
 
-export const Header = () => {
+const Header = () => {
   return <header className={styles.header}>
     <PagePadding className={styles.header__inner}>
       <input type="checkbox" id={styles.menu__checkbox}/>
@@ -27,3 +27,4 @@ export const Header = () => {
     </PagePadding>
   </header>
 }
+export default Header

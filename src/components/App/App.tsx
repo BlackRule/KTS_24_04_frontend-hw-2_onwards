@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { Header } from 'components/Header/Header'
+import  Header  from 'components/Header'
 import Product from 'pages/Product'
 import Products from 'pages/Products'
 import styles from './App.module.scss'

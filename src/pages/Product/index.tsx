@@ -2,9 +2,9 @@ import {useEffect, useState} from 'react'
 import {useLocation, useNavigate, useParams} from 'react-router-dom'
 import * as PostService from 'api/ProductService'
 import {Product as ProductModel} from 'api/ProductService'
-import PagePadding from 'components/PagePadding/PagePadding'
-import Product from './components/Product/Product'
-import RelatedItems from './components/RelatedItems/RelatedItems'
+import PagePadding from 'components/PagePadding'
+import Product from './components/Product'
+import RelatedItems from './components/RelatedItems'
 
 const ProductPage = () => {
   const URLparams = useParams() as unknown as { id: string | undefined }

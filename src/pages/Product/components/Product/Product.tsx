@@ -1,7 +1,7 @@
 import {HTMLAttributes} from 'react'
 import {Product as ProductModel} from 'api/ProductService'
-import Button from 'components/Button/Button'
-import Text from 'components/Text/Text'
+import Button from 'components/Button'
+import Text from 'components/Text'
 import styles from './Product.module.scss'
 
 type ProductProps = React.PropsWithChildren<{
