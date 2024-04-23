@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react'
 import styles from './Checkbox.module.scss'
 import classNames from "classnames";
 import CheckIcon from "../icons/CheckIcon";

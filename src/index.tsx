@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import Header from 'components/Header'
 import Product from 'pages/Product'
