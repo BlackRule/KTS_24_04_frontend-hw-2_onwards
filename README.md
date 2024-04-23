@@ -29,4 +29,6 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-для корректной работы конфига дополнительно удалили комментарии из файла tsconfig.json, которые находились там изначально (/* Bundler mode */, /* Linting */).
+для корректной работы конфига дополнительно удалили комментарии из файла tsconfig.json, которые находились там изначально (`/* Bundler mode */`, `/* Linting */`).
+
+Используется БЭМ но `twoWords` вместо two-words ибо `style.twoWords` лучше чем `style['two-words']`

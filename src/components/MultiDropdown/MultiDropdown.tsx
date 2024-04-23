@@ -65,7 +65,7 @@ export const MultiDropdown = ({
   return (
     <div ref={ref}
       {...props}
-      className={classNames('multi-dropdown', styles['multi-dropdown'], props.className,
+      className={classNames('multiDropdown', styles.multiDropdown, props.className,
         {[styles.isOpen]:isOpen})}
       onClick={(e) => !disabled&&setIsOpen(true)} >
       <Input

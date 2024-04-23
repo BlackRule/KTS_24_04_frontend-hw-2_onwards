@@ -1,11 +1,11 @@
-.Products{
+.products{
   display: flex;
   flex-direction: column;
 }
-.Products,.PagePadding{
+.products,.pagePadding{
   background-color: #FAFAFA;
 }
-.PagePadding{
+.pagePadding{
   padding-top: 100px;
 }
 .products{
@@ -25,7 +25,7 @@
     font-size: 14px;
   }
 }
-.search-bar{
+.searchBar{
   display: flex;
   gap: var(--space-xl);
   margin-bottom: var(--space-xl);
@@ -34,33 +34,33 @@
   }
 
 }
-.search-bar-input{
+.searchBar__input{
   flex-grow: 1;
 }
 .filter{
  align-self: flex-start;
 }
-.total-product{
+.totalProducts{
   display: flex;
   align-self: flex-start;
   align-items: center;
   margin: 50px 0;
 }
-.total-product__txt{
+.totalProducts__txt{
   font-weight: 700;
   font-size: 44px;
   @media(max-width: 1023px){
     font-size: 18px;
   }
 }
-.total-product__count{
+.totalProducts__count{
   padding: 5px 16px;
   background: #F9F9F9;
   border-radius: 20px;
   color: var(--text-accent);
   font-weight: 700;
 }
-.products-grid{
+.productsGrid{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

@@ -1,4 +1,4 @@
-.Button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@
 
 }
 
-.button-skin_primary {
+.buttonSkin_primary {
   background: var(--button-primary-bg);
   $c: var(--button-primary-text);
   color: $c;
@@ -40,7 +40,7 @@
   }
 }
 
-.button-skin_secondary {
+.buttonSkin_secondary {
   background: var(--button-secondary-bg);
   $c: var(--button-secondary-text);
   color: $c;

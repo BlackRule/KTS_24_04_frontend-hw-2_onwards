@@ -56,13 +56,13 @@ const Products = ()=>{
   const [options, setOptions] = useState<Option[]>()
   return (
     <PagePadding className={styles.PagePadding}>
-      <div className={styles.Products}>
+      <div className={styles.products}>
         <Text className={styles.products} tag={'h1'} view={'title'}>Products</Text>
         <Text className={styles.p1} tag={'p'} color='secondary' view={'p-20'}>We display products based on the latest products we have, if you want
                     to see our old products please enter the name of the item</Text>
-        <div className={styles['search-bar']}>
+        <div className={styles.searchBar}>
           <Input value='' onChange={() => {
-          }} placeholder={'Search product'} className={styles['search-bar-input']}/>
+          }} placeholder={'Search product'} className={styles.searchBar__input}/>
           <Button>{width > 1023 ? 'Find Now' : 'Search'}</Button>
         </div>
         <MultiDropdown generateValueElement={(value: Option[]) => {
@@ -71,11 +71,11 @@ const Products = ()=>{
         onChange={function (value: Option[]): void {
           throw new Error('Function not implemented.')
         }} className={styles.filter}/>
-        <div className={styles['total-product']}>
-          <span className={styles['total-product__txt']}>Total Products</span>
-          <span className={styles['total-product__count']}>{totalElements}</span>
+        <div className={styles.totalProducts}>
+          <span className={styles.totalProducts__txt}>Total Products</span>
+          <span className={styles.totalProducts__count}>{totalElements}</span>
         </div>
-        <div className={styles['products-grid']}>
+        <div className={styles.productsGrid}>
           {currentProducts?currentProducts.map((product) =>
             (<Link key={product.id} to={`/product/${product.id}`}>
               <Card {...ProductModelToCardProps(product)} actionSlot={<Button>Add to Cart</Button>}/>

@@ -6,7 +6,7 @@ import styles from './App.module.scss'
 
 const App = () => {
   return (
-    <div className={styles.App}>
+    <div className={styles.app}>
       <Header />
       <Routes>
         <Route path="/" element={<Products />} />

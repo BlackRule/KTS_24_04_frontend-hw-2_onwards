@@ -36,7 +36,7 @@ const Loader: React.FC<LoaderProps> = ({size,className}) => {
             </svg>
             s=60
     }
-    return <div className={classNames(style.Loader,className)} style={
+    return <div className={classNames(style.loader,className)} style={
         {width:s,height:s}
     }>
         {inner}

@@ -3,7 +3,7 @@
 }
 
 
-.Header {
+.header {
   position: sticky;
   top: 0;
   background-color: var(--header-bg);
@@ -17,7 +17,7 @@
   }
 }
 
-.Header__inner {
+.header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +27,7 @@
   }
 }
 
-.logo-and-burger {
+.logoAndBurger {
   display: flex;
   justify-content: space-between;
   @media(max-width: 1023px) {
@@ -75,7 +75,7 @@
   @include burger-line;
 }
 
-#menu__is-open:checked ~ .logo-and-burger > .burger {
+#menu__checkbox:checked ~ .logoAndBurger > .burger {
   & > * {
     opacity: 0;
   }
@@ -90,7 +90,7 @@
   }
 }
 
-#menu__is-open {
+#menu__checkbox {
   display: none;
 }
 
@@ -107,7 +107,7 @@
   }
 }
 
-#menu__is-open:checked ~ .nav {
+#menu__checkbox:checked ~ .nav {
   display: flex;
 }
 
@@ -142,7 +142,7 @@
   }
 }
 
-#menu__is-open:checked ~ .right {
+#menu__checkbox:checked ~ .right {
   display: flex;
 }
 

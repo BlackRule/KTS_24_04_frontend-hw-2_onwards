@@ -15,7 +15,7 @@ export type InputProps = Omit<
 };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({onChange,afterSlot,className,onClick,...props},ref) => <div onClick={onClick} className={classNames(className,styles.Input)}>
+  ({onChange,afterSlot,className,onClick,...props},ref) => <div onClick={onClick} className={classNames(className,styles.input)}>
     <input {...props} type="text" onChange={(e)=>onChange(e.target.value)} ref={ref}/>
     {afterSlot}
   </div>)

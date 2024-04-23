@@ -16,7 +16,7 @@ skin?: 'primary'|'secondary';
 const Button: React.FC<ButtonProps> = ({children,skin = 'primary',loading,disabled, className,onClick,...props}) => {
   const disabledProp=disabled
   disabled||=loading
-  return <button {...props} disabled={disabled} className={classNames(className, style.Button,style[`button-skin_${skin}`], {[style.loading]:loading},{[style.disabled]:disabledProp})}
+  return <button {...props} disabled={disabled} className={classNames(className, style.button,style[`buttonSkin_${skin}`], {[style.loading]:loading},{[style.disabled]:disabledProp})}
     onClick={(e) => !disabled && onClick && onClick(e)}>
     {loading && <Loader size={'s'}/>}{children}
   </button>

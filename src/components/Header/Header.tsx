@@ -5,15 +5,15 @@ import styles from './Header.module.scss'
 
 
 export const Header = () => {
-  return (<header className={styles.Header}>
-    <PagePadding className={styles.Header__inner}>
-      <input type="checkbox" id={styles['menu__is-open']}/>
-      <div className={styles['logo-and-burger']}>
+  return <header className={styles.header}>
+    <PagePadding className={styles.header__inner}>
+      <input type="checkbox" id={styles.menu__checkbox}/>
+      <div className={styles.logoAndBurger}>
         <Link to={'/'} className={styles.logo}>
           <img src={logo} alt=""/>
           <span>Lalasia</span>
         </Link>
-        <label htmlFor={styles['menu__is-open']} className={styles.burger}><div/></label>
+        <label htmlFor={styles.menu__checkbox} className={styles.burger}><div/></label>
       </div>
       <nav className={styles.nav}>
         <Link to={'/'} className={styles.current}>Products</Link>
@@ -25,5 +25,5 @@ export const Header = () => {
         <Link to={'#'} className={styles.user}/>
       </div>
     </PagePadding>
-  </header>)
+  </header>
 }
