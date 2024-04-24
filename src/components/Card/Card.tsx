@@ -15,14 +15,14 @@ export type CardProps = {
 /** Содержимое карточки (футер/боковая часть), может быть пустым */
     contentSlot?: React.ReactNode;
     /*+*/
+/** Описание карточки */
+    description: React.ReactNode;
+    /*+*/
 /** URL изображения */
     image: string;
     /*+*/
 /** Клик на карточку */
     onClick?: React.MouseEventHandler;
-    /*+*/
-/** Описание карточки */
-    description: React.ReactNode;
     /*+*/
 /** Заголовок карточки */
     title: React.ReactNode;/*+*/

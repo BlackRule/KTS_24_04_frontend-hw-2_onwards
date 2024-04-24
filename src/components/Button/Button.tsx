@@ -8,9 +8,9 @@ import style from './Button.module.scss'
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Текст кнопки */
   children: React.ReactNode;
-skin?: 'primary'|'secondary';
-  /** Состояние загрузки */
+/** Состояние загрузки */
   loading?: boolean;
+  skin?: 'primary'|'secondary';
 };
 
 const Button: React.FC<ButtonProps> = ({children,skin = 'primary',loading,disabled, className,onClick,...props}) => {

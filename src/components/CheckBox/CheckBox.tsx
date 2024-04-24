@@ -1,7 +1,7 @@
-import * as React from 'react'
-import styles from './Checkbox.module.scss'
 import cn from 'classnames'
-import CheckIcon from "../icons/CheckIcon";
+import * as React from 'react'
+import CheckIcon from '../icons/CheckIcon'
+import styles from './Checkbox.module.scss'
 
 export type CheckBoxProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -17,6 +17,6 @@ const CheckBox: React.FC<CheckBoxProps> = ({onChange, ...props
     <input {...props} type="checkbox" onClick={() => onChange(!props.checked)}/>
     <CheckIcon color={props.disabled ? 'secondary' : 'accent'} width={40} height={40}/>
   </label>
-};
+}
 
-export default CheckBox;
+export default CheckBox

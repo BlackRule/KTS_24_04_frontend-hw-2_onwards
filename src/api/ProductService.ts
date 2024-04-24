@@ -10,7 +10,7 @@ export type Product = {
     'price': number,
     'title': string
   }
-  export type Category = {
+export type Category = {
     id:number,
     name:string
 }
