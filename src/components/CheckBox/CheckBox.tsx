@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styles from './Checkbox.module.scss'
-import classNames from "classnames";
+import cn from 'classnames'
 import CheckIcon from "../icons/CheckIcon";
 
 export type CheckBoxProps = Omit<
@@ -13,7 +13,7 @@ export type CheckBoxProps = Omit<
 
 const CheckBox: React.FC<CheckBoxProps> = ({onChange, ...props
 }) => {
-  return <label className={classNames(props.className, styles.checkbox, {[styles.disabled]: props.disabled})}>
+  return <label className={cn(props.className, styles.checkbox, {[styles.disabled]: props.disabled})}>
     <input {...props} type="checkbox" onClick={() => onChange(!props.checked)}/>
     <CheckIcon color={props.disabled ? 'secondary' : 'accent'} width={40} height={40}/>
   </label>

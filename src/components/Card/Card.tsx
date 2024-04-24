@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cn from 'classnames'
 import Text from '../Text'
 import styles from './Card.module.scss'
 
@@ -28,7 +28,7 @@ export type CardProps = {
     title: React.ReactNode;/*+*/
 };
 
-const Card: React.FC<CardProps> = (props) => <div className={classNames(props.className,styles.card)} onClick={props.onClick}>
+const Card: React.FC<CardProps> = (props) => <div className={cn(props.className,styles.card)} onClick={props.onClick}>
   <img src={props.image} alt=""/>
   <div className={styles.card__text}>
     <div className={styles.caption}>{props.captionSlot}</div>

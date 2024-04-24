@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cn from 'classnames'
 import styles from './PageNumbers.module.scss'
 
 type PageNumbersProps= {
@@ -12,7 +12,7 @@ const PageNumbers = ({currentPage,totalPages,onChange}:PageNumbersProps) => {
     <div className={styles.PageNumbers}>{[...Array(totalPages+1).keys()].slice(1).map(
       (i)=>
         <div key={i} onClick={()=>onChange(i-1)} className={
-          classNames(styles.pageNumber,{[styles.selected]:i-1===currentPage})
+          cn(styles.pageNumber,{[styles.selected]:i-1===currentPage})
         }>{i}</div>
     )}</div>
   )

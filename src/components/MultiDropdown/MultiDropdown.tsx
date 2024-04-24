@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import cn from 'classnames'
 import {RefObject, useEffect, useRef, useState} from 'react'
 import Input from '../Input'
 import ArrowDownIcon from '../icons/ArrowDownIcon'
@@ -65,7 +65,7 @@ export const MultiDropdown = ({
   return (
     <div ref={ref}
       {...props}
-      className={classNames('multiDropdown', styles.multiDropdown, props.className,
+      className={cn('multiDropdown', styles.multiDropdown, props.className,
         {[styles.isOpen]:isOpen})}
       onClick={(e) => !disabled&&setIsOpen(true)} >
       <Input
@@ -74,12 +74,12 @@ export const MultiDropdown = ({
         onChange={(value)=> setText(value)} afterSlot={<ArrowDownIcon color={'secondary'}/>}
       />
       {isOpen ? (
-        <div className={classNames(styles.optionsParent)}>
+        <div className={cn(styles.optionsParent)}>
           {visibleOptions.map(
             (option) =>
               (<div
                 key={option.key}
-                className={classNames(styles.option, {
+                className={cn(styles.option, {
                   [styles.selected]: includes(value, option),
                 })}
                 onClick={() =>
