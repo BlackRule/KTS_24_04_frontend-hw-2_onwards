@@ -34,3 +34,5 @@ export default {
 Используется БЭМ но `twoWords` вместо two-words ибо `style.twoWords` лучше чем `style['two-words']`
 
 Eslint'ом всё сортируется для удобства отслеживания изменений
+
+Prettier не используется. По крайней мере пока https://antfu.me/posts/why-not-prettier настраивать его не хочу. Хватает eslint
