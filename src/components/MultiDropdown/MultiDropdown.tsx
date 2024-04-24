@@ -4,13 +4,13 @@ import Input from '../Input'
 import ArrowDownIcon from '../icons/ArrowDownIcon'
 import styles from './MultiDropdown.module.scss'
 
-const useClickOutside = <T extends HTMLElement>(ref: RefObject<T>, fn: () => void) => {
+const useClickOutside = <T extends HTMLElement>(ref: RefObject<T>, onClickOutside: () => void) => {
   useEffect(() => {
     const element = ref?.current
 
     function handleClickOutside(event: Event) {
       if (element && !element.contains(event.target as Node | null)) {
-        fn()
+        onClickOutside()
       }
     }
 
@@ -18,7 +18,7 @@ const useClickOutside = <T extends HTMLElement>(ref: RefObject<T>, fn: () => voi
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [ref, fn])
+  }, [ref, onClickOutside])
 }
 
 export type Option = {
