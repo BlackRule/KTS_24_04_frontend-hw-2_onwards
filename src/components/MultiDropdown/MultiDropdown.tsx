@@ -71,7 +71,7 @@ export const MultiDropdown = ({
       <Input
         placeholder={generateValueElement(value)}
         value={isOpen&&text!=='' ? text : (value.length===0?'':generateValueElement(value))}
-        onChange={(value)=> setText(value)} afterSlot={<ArrowDownIcon color={'secondary'}/>}
+        onChange={setText} afterSlot={<ArrowDownIcon color={'secondary'}/>}
       />
       {isOpen ? (
         <div className={cn(styles.optionsParent)}>
