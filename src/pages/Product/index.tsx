@@ -7,7 +7,7 @@ import Product from './components/Product'
 import RelatedItems from './components/RelatedItems'
 
 const ProductPage = () => {
-  const URLparams = useParams() as unknown as { id: string | undefined }
+  const URLparams = useParams() as { id: string | undefined }
   const [product, setProduct] = useState<ProductModel>()
   const navigate = useNavigate()
   const location = useLocation()
