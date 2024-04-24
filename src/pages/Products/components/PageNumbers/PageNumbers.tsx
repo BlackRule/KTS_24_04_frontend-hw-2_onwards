@@ -9,7 +9,7 @@ type PageNumbersProps= {
 
 const PageNumbers = ({currentPage,totalPages,onChange}:PageNumbersProps) => {
   return (
-    <div className={styles.PageNumbers}>{[...Array(totalPages+1).keys()].slice(1).map(
+    <div className={styles.pageNumbers}>{[...Array(totalPages+1).keys()].slice(1).map(
       (i)=>
         <div key={i} onClick={()=>onChange(i-1)} className={
           cn(styles.pageNumber,{[styles.selected]:i-1===currentPage})
