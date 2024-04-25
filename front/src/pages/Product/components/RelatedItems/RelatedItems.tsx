@@ -18,7 +18,7 @@ const RelatedItems=({category}:RelatedItemsProps)=>{
     PostService.getProducts(category.id,3).then((response)=>setProducts(response.data))
   }, [])
   return (
-    <section className={styles.RelatedItems}>
+    <section className={styles.relatedItems}>
       <div className={styles.txt}>Related Items</div>
       <div className={styles.grid}>
         {products?

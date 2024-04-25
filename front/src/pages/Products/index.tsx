@@ -55,7 +55,7 @@ const Products = ()=>{
   },[])
   const [options, setOptions] = useState<Option[]>()
   return (
-    <PagePadding className={styles.PagePadding}>
+    <PagePadding className={styles.pagePadding}>
       <div className={styles.products}>
         <Text className={styles.products} tag={'h1'} view={'title'}>Products</Text>
         <Text className={styles.p1} tag={'p'} color='secondary' view={'p-20'}>We display products based on the latest products we have, if you want

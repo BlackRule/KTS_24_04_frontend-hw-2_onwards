@@ -10,7 +10,7 @@ type ProductProps = React.PropsWithChildren<{
 
 const Product=({product}:ProductProps)=>{
   return (
-    <section className={styles.Product}>
+    <section className={styles.product}>
       <img src={product.images[0]} className={styles.img}/>
       <div>
         <Text view={'title'} className={styles.title}>{product.title}</Text>
