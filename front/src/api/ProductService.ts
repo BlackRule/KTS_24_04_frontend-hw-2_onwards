@@ -1,6 +1,6 @@
 import axios from 'axios'
 const instance = axios.create({
-  baseURL: 'https://api.escuelajs.co/api/v1'
+  baseURL: 'http://195.46.171.236:3123/api/v1'
 })
 export type Product = {
     'category': Category,

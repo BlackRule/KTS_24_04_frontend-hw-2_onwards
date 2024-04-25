@@ -1,0 +1,9 @@
+import secrets
+
+ACCESS_SECRET_KEY = secrets.token_hex(32)
+REFRESH_SECRET_KEY = secrets.token_hex(32)
+RECOVERY_SECRET_KEY = secrets.token_hex(32)
+
+print(f"ACCESS_SECRET_KEY={ACCESS_SECRET_KEY}")
+print(f"REFRESH_SECRET_KEY={REFRESH_SECRET_KEY}")
+print(f"RECOVERY_SECRET_KEY={RECOVERY_SECRET_KEY}")
