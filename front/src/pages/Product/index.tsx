@@ -1,29 +1,39 @@
-import {useEffect, useState} from 'react'
-import {useLocation, useNavigate, useParams} from 'react-router-dom'
-import * as PostService from 'api/ProductService'
-import {Product as ProductModel} from 'api/ProductService'
-import PagePadding from 'components/PagePadding'
-import Product from './components/Product'
-import RelatedItems from './components/RelatedItems'
+import { observer } from 'mobx-react-lite'
+import { useEffect } from 'react'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import Loader from 'components/Loader'
+import PagePadding from 'components/PagePadding/PagePadding'
+import {ProductStore} from 'stores'
+import { useLocalStore } from 'utils/useLocalStore'
+import Product from './components/Product/Product'
+import RelatedItems from './components/RelatedItems/RelatedItems'
 
 const ProductPage = () => {
-  const URLparams = useParams() as { id: string | undefined }
-  const [product, setProduct] = useState<ProductModel>()
+  const URLparams = useParams() as unknown as { id: string | undefined }
   const navigate = useNavigate()
+  const productStore = useLocalStore(() => new ProductStore())
   const location = useLocation()
   useEffect(() => {
-    if (URLparams.id===undefined) navigate('/')
-    else
-      PostService.getProduct(URLparams.id).then((response)=>setProduct(response.data))
+    if (typeof URLparams.id !== 'string') {
+      navigate('/')
+    } else {
+      productStore.get(URLparams.id)
+    }
+  }, [productStore, location, URLparams.id, navigate])
 
-  },[location])
+  const { product } = productStore
+  if(product===undefined||product.state=='rejected') return null
   return (
     <PagePadding>
-      {product ?<>
-        <Product product={product}/>
-        <RelatedItems category={product.category}/>
-      </>: null}
+      {product.state === 'pending' ? (
+        <Loader />
+      ) : (
+        <>
+          <Product product={product.value} />
+          <RelatedItems product={product.value} />
+        </>
+      )}
     </PagePadding>
   )
 }
-export default ProductPage
+export default observer(ProductPage)

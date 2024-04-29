@@ -1,5 +1,5 @@
 import {HTMLAttributes} from 'react'
-import {Product as ProductModel} from 'api/ProductService'
+import {Product as ProductModel} from 'api'
 import Button from 'components/Button'
 import Text from 'components/Text'
 import styles from './Product.module.scss'

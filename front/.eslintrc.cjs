@@ -1,5 +1,5 @@
 const path = require('path')
-
+//todo sort scss props
 module.exports = {
   env: {
     browser: true,

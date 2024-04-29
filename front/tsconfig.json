@@ -17,13 +17,16 @@
     "noFallthroughCasesInSwitch": false,
     "baseUrl": "src",
     "paths": {
-      "api": ["api/*"],
+      "api": ["api"],
       "assets": ["assets/*"],
       "components": ["components/*"],
+      "config": ["config/*"],
       "hooks": ["hooks/*"],
       "models": ["models/*"],
       "pages": ["pages/*"],
-      "styles": ["styles/*"]
+      "styles": ["styles/*"],
+      "stores": ["stores"],
+      "utils": ["utils/*"]
     }
   },
   "include": ["src"],
