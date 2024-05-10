@@ -1,8 +1,7 @@
 import {makeAutoObservable} from 'mobx'
 import {IPromiseBasedObservable,fromPromise} from 'mobx-utils'
 import {Category, getCategories, getProduct, getProducts, Product} from 'api'
-import {ILocalStore} from '../utils/useLocalStore.ts'
-
+import {ILocalStore} from '../utils/useLocalStore'
 
 export class CategoriesStore implements ILocalStore {
   categories?:IPromiseBasedObservable<Category[]>

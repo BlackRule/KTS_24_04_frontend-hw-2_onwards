@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import  Header  from 'components/Header'
 import Product from 'pages/Product'
 import Products from 'pages/Products'
-import {useQueryParamsStoreInit} from 'stores/RootStore/hooks/useQueryParamsStoreInit.ts'
+import {useQueryParamsStoreInit} from 'stores/RootStore/hooks/useQueryParamsStoreInit'
 import styles from './App.module.scss'
 
 const App = () => {

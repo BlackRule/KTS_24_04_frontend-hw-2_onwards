@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 import {useEffect} from 'react'
 import { MultiDropdown, MultiDropdownProps, Option } from 'components/MultiDropdown'
 import {CategoriesStore} from 'stores'
-import {categoriesToOptions} from 'utils/getNewURLWithUpdatedParamValue.ts'
+import {categoriesToOptions} from 'utils/getNewURLWithUpdatedParamValue'
 import { useLocalStore } from 'utils/useLocalStore'
 
 type FilterProps = Omit<MultiDropdownProps,'value'|'options'|'generateValueElement'|'loading'>
