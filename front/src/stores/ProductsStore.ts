@@ -1,10 +1,10 @@
 import {action, computed, makeObservable, observable, reaction, runInAction} from 'mobx'
 import {fromPromise} from 'mobx-utils'
 import {Category, getProducts, Product} from 'api'
-import {ELEMENTS_PER_PAGE} from '../config/config.ts'
-import {log} from '../utils/console.ts'
-import {LoadingState} from '../utils/loadingState.ts'
-import {ILocalStore} from '../utils/useLocalStore.ts'
+import {ELEMENTS_PER_PAGE} from '../config/config'
+import {log} from '../utils/console'
+import {LoadingState} from '../utils/loadingState'
+import {ILocalStore} from '../utils/useLocalStore'
 import rootStore from './RootStore'
 
 export default class ProductsStore implements ILocalStore {

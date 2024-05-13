@@ -6,9 +6,9 @@ import {Product} from 'api'
 import Button from 'components/Button'
 import Card from 'components/Card'
 import Loader from 'components/Loader'
+import {ProductModelToCardProps} from 'pages/common'
 import {RelatedItemsStore} from 'stores'
-import {useLocalStore} from 'utils/useLocalStore.ts'
-import {ProductModelToCardProps} from '../../../common.ts'
+import {useLocalStore} from 'utils/useLocalStore'
 import styles from './RelatedItems.module.scss'
 
 type RelatedItemsProps = React.PropsWithChildren<{
