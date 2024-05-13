@@ -92,21 +92,21 @@ export default class ProductsStore implements ILocalStore {
   private readonly _scReaction = reaction(
     () => rootStore.query.getParam('sc'),
     (sc) => {
-      this.selectedCategories = (sc as string[]) || [] //TODO as string
+      this.selectedCategories = (sc as string[]) || []
     }
   )
 
   private readonly _qReaction = reaction(
     () => rootStore.query.getParam('q'),
     (q) => {
-      this.query = (q as string) || '' //fixme as string
+      this.query = (q as string) || ''
     }
   )
   private readonly _pReaction = reaction(
     () => rootStore.query.getParam('p'),
     (pp) => {
       const p = parseInt(pp as string) - 1
-      this.pageNumber = p >= 0 ? p : 0 //fixme as string
+      this.pageNumber = p >= 0 ? p : 0
     }
   )
 
