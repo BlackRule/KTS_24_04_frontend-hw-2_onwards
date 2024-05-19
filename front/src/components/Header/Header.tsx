@@ -2,9 +2,11 @@ import {Link} from 'react-router-dom'
 import PagePadding from 'components/PagePadding'
 import logo from './img/logo.svg'
 import styles from './Header.module.scss'
+import {useUser} from "utils/firebase";
 
 
 const Header = () => {
+  const user = useUser()
   return <header className={styles.header}>
     <PagePadding className={styles.header__inner}>
       <input type="checkbox" id={styles.menu__checkbox}/>
@@ -22,7 +24,7 @@ const Header = () => {
       </nav>
       <div className={styles.right}>
         <Link to={'#'} className={styles.bag}/>
-        <Link to={'#'} className={styles.user}/>
+        <Link to={user === null ?'/login':'/user'} className={styles.user}/>
       </div>
     </PagePadding>
   </header>
