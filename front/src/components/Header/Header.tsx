@@ -1,8 +1,8 @@
 import {Link} from 'react-router-dom'
 import PagePadding from 'components/PagePadding'
+import {useUser} from 'utils/firebase'
 import logo from './img/logo.svg'
 import styles from './Header.module.scss'
-import {useUser} from "utils/firebase";
 
 
 const Header = () => {
