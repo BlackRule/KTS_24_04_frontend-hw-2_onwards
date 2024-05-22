@@ -1,4 +1,5 @@
 import {HTMLAttributes} from 'react'
+import {Carousel} from 'react-responsive-carousel'
 import {Product as ProductModel} from 'api'
 import Button from 'components/Button'
 import Text from 'components/Text'
@@ -11,7 +12,13 @@ type ProductProps = React.PropsWithChildren<{
 const Product=({product}:ProductProps)=>{
   return (
     <section className={styles.product}>
-      <img src={product.images[0]} className={styles.img}/>
+      <Carousel showArrows={true} swipeable useKeyboardArrows emulateTouch /*className={styles.img}*/>
+        {product.images.map((img) =>
+          <div key={img}>
+            <img src={img}/>
+          </div>
+        )}
+      </Carousel>
       <div>
         <Text view={'title'} className={styles.title}>{product.title}</Text>
         <Text view={'p-20'} color={'secondary'} className={styles.description}>

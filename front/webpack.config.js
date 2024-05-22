@@ -95,7 +95,7 @@ module.exports = {
   plugins,
   resolve: {
     alias: toWebpackAliases(),
-    extensions: ['.jsx', '.js', '.tsx', '.ts', 'scss'],
+    extensions: ['.jsx', '.js', '.tsx', '.ts', '.scss'],
   },
   target: !isProd ? 'web' : 'browserslist',
 }

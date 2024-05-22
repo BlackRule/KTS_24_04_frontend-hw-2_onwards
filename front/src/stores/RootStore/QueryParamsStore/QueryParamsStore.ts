@@ -14,6 +14,7 @@ export default class QueryParamsStore {
     })
   }
 
+  //TODO type this
   getParam(key: string) {
     return this._params[key]
   }

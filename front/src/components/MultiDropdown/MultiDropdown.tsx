@@ -75,7 +75,7 @@ export const MultiDropdown = ({
       <Input
         placeholder={generateValueElement(value)}
         value={isOpen&&text!=='' ? text : (value.length===0?'':generateValueElement(value))}
-        onChange={setText} afterSlot={/*todo*/loading?<Loader/>:<ArrowDownIcon color={'secondary'}/>}
+        onChange={setText} afterSlot={/*todo design*/loading?<Loader/>:<ArrowDownIcon color={'secondary'}/>}
       />
       {isOpen ? (
         <div className={cn(styles.optionsParent)}>

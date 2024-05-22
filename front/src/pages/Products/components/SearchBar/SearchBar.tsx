@@ -23,7 +23,7 @@ const SearchBar = ({
       }}
     />
     <Button onClick={() => handleSearch(value)}>
-      {width > 1023 ? 'Find Now' : 'Search'}
+      {width > 1023 ? 'Find Now' : '🔍'}
     </Button>
   </div>
 }
