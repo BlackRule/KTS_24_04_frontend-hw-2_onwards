@@ -65,7 +65,9 @@ const LoginSignup = (props:{type:'signIn'|'signUp'}) => {
             required
             type="email"
             onChange={(v) => setEmail(v)}
-            value={email}/>
+            value={email}
+            className={styles.input}
+          />
           {/* helperText="Incorrect entry." todo */ }
           {/* error todo */}
           <Input
@@ -74,7 +76,9 @@ const LoginSignup = (props:{type:'signIn'|'signUp'}) => {
             required
             type="password"
             onChange={(v) => setPassword(v)}
-            value={password}/>
+            value={password}
+            className={styles.input}
+          />
           {error!==null?<Alert severity="error">{error}</Alert>:null}
           <Button onClick={submit}>
             {translation[language][props.type==='signUp'?'signUp':'login']}
@@ -88,7 +92,7 @@ const LoginSignup = (props:{type:'signIn'|'signUp'}) => {
           </NavLink>
         </p><p>
           {translation[language].forgot_password}
-          {' '}
+          <br/><br/>
           <Button onClick={sendEmail}>
             {translation[language].send_password_reset_email}
           </Button>
