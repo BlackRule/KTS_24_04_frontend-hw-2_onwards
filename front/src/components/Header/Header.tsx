@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 import PagePadding from 'components/PagePadding'
 import {useUser} from 'utils/firebase'
+import Cart from './components/Cart/Cart'
 import logo from './img/logo.svg'
 import styles from './Header.module.scss'
 
@@ -23,7 +24,7 @@ const Header = () => {
         <Link to={'#'}>About Us</Link>
       </nav>
       <div className={styles.right}>
-        <Link to={'#'} className={styles.bag}/>
+        <Cart/>
         <Link to={user === null ?'/login':'/user'} className={styles.user}/>
       </div>
     </PagePadding>

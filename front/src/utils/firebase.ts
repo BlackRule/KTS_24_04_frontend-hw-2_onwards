@@ -53,3 +53,8 @@ export const useUser = () => {
   }, [])
   return user
 }
+
+export const addProductToCart=(userUID:string, productId:string) => {
+    addDoc(collection(db, `users/${userUID}/cart`), {productId})
+
+}

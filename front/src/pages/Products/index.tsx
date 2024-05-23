@@ -1,6 +1,7 @@
 import {observer} from 'mobx-react-lite'
-import {useEffect} from 'react'
+import {useCallback, useEffect} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
+import { useLocalStorage } from 'usehooks-ts'
 import Button from 'components/Button'
 import Card from 'components/Card'
 import Loader from 'components/Loader'
@@ -9,6 +10,7 @@ import PagePadding from 'components/PagePadding'
 import Text from 'components/Text'
 import {ProductsStore} from 'stores'
 import rootStore from 'stores/RootStore'
+import {addProductToCart, useUser} from 'utils/firebase'
 import {getNewURLWithUpdatedParamValue} from 'utils/getNewURLWithUpdatedParamValue'
 import {LoadingState} from 'utils/loadingState'
 import {useLocalStore} from 'utils/useLocalStore'
@@ -36,6 +38,14 @@ const Products = ()=>{
   const productsStoreState = productsStore.state
   const currentPage = productsStore.pageNumber
   const { totalPages } = productsStore
+  const user = useUser()
+  const [productsToAddProductToCart, setProductsToAddProductToCart] = useLocalStorage('productsToAddProductToCart', [] as string[])
+  const addProductToCartHandler=useCallback((productId: string)=>{
+    if(!user){
+      setProductsToAddProductToCart([...productsToAddProductToCart,productId])
+    }
+    else addProductToCart(user.uid,productId)
+  },[productsToAddProductToCart, setProductsToAddProductToCart, user])
   return (
     <PagePadding className={styles.pagePadding}>
       <div className={styles.products}>
@@ -62,7 +72,10 @@ const Products = ()=>{
           <div className={styles.productsGrid}>
             {pagedList.map((product) =>
               (<Link key={product.id} to={`/product/${product.id}`}>
-                <Card {...ProductModelToCardProps(product)} actionSlot={<Button>Add to Cart</Button>}/>
+                <Card {...ProductModelToCardProps(product)} actionSlot={<Button onClick={(e)=> {
+                  addProductToCartHandler(`${product.id}`)
+                  e.preventDefault()
+                }}>Add to Cart</Button>}/>
               </Link>)
             ) }
           </div>

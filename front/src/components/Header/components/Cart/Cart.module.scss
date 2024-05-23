@@ -1,0 +1,66 @@
+@use "../../common";
+.bag {
+  @include common.icon;
+  background-image: url('./img/bag.svg');
+  position: relative;
+  @media(max-width: 1023px) {
+    position: unset;
+  }
+}
+#check{
+  display: none;
+}
+.productsList{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  width: max-content;
+  background-color: white;
+  align-items: center;
+  @media(max-width: 1023px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: auto;
+      justify-content: center;
+  }
+  @media not (max-width: 1023px) {
+      transform: translateY(100%);
+  }
+}
+.close{
+  position: fixed;
+  top: 22px;
+  right: 10px;
+  background-color: white;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 42px;
+  &::before, &::after {
+    content: '';
+    @include common.burger-line;
+  }
+  &::before {
+    transform: rotate(-45deg) translate(-14px, 14px);
+
+  }
+
+  &::after {
+    transform: rotate(45deg) translate(-14px, -14px);
+  }
+}
+#check:checked~*{
+  & .productsList {
+    display: flex;
+  }
+  @media(max-width: 1023px) {
+    & .close{
+      display: flex;
+    }
+  }
+}
+

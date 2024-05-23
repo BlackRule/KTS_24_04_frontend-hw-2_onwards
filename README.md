@@ -11,3 +11,4 @@ firebase
 	 signup
 	 send password reset email
 Product page image slider using react-responsive-carousel
+firebase cart
