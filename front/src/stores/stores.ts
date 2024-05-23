@@ -33,23 +33,6 @@ export class ProductStore implements ILocalStore {
 
 }
 
-export class ProductsFromIdsStore implements ILocalStore {
-  products?:IPromiseBasedObservable<PromiseSettledResult<Product>[]>
-  constructor(){
-    makeAutoObservable(this)
-  }
-
-  destroy(): void {
-
-  }
-  get(ids:string[]) {
-    const promises=[]
-    for(const id of ids) promises.push(getProduct(id))
-    this.products=fromPromise(Promise.allSettled(promises))
-  }
-
-}
-
 export class RelatedItemsStore implements ILocalStore {
   list?:IPromiseBasedObservable<Product[]>
   constructor(){

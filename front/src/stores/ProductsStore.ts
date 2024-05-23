@@ -63,6 +63,13 @@ export default class ProductsStore implements ILocalStore {
     )
   }
 
+  private readonly pageNumberRe = reaction(
+    () => this.pageNumber,
+    (list) => {
+      console.log("pageNumberRe")
+    }
+  )
+
   private readonly _recalculateTotalPagesReaction = reaction(
     () => this.searchFilteredList,
     (list) => {

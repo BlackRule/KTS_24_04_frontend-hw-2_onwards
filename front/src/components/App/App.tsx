@@ -5,11 +5,13 @@ import Product from 'pages/Product'
 import Products from 'pages/Products'
 import Signup from 'pages/Signup/Signup'
 import User from 'pages/User/User'
+import {useCartStoreInit} from 'stores/RootStore/hooks/useCartStoreInit'
 import {useQueryParamsStoreInit} from 'stores/RootStore/hooks/useQueryParamsStoreInit'
 import styles from './App.module.scss'
 
 const App = () => {
   useQueryParamsStoreInit()
+  useCartStoreInit()
   return (
     <div className={styles.app}>
       <Header />

@@ -1,4 +1,4 @@
-import { action, makeObservable, observable } from 'mobx'
+import {action, makeObservable, observable, reaction} from 'mobx'
 import * as qs from 'qs'
 
 type PrivateFields = '_params';
@@ -9,10 +9,16 @@ export default class QueryParamsStore {
 
   constructor() {
     makeObservable<QueryParamsStore, PrivateFields>(this, {
-      _params: observable.ref,
+      _params: observable,
       setSearch: action,
     })
   }
+  private readonly _paramsRe = reaction(
+    () => this._params,
+    () => {
+      console.log("_paramsRe")
+    }
+  )
 
   //TODO type this
   getParam(key: string) {
